@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 作品集
 subtitle:
-description:
+description: 杂记
 keywords:
-author: John Doe
-language:
-timezone:
+author: 暖暖
+language: zh-Hans
+timezone: Asia/Shanghai #网站时区。Hexo 默认使用您电脑的时区。
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://sunshineabc.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -70,6 +70,21 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+# feed
+# Dependencies: https://github.com/hexojs/hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+  
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -78,4 +93,6 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/SunshineABC/sunshineABC.github.io.git
+  branch: master

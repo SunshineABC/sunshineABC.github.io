@@ -1,28 +1,28 @@
 language: node_js
 node_js: stable
-# assign build branches
 branches:
   only:
-    - blog_source
-# cache this directory
+  - blog_source
 cache:
   directories:
-    - node_modules
-# S: Build Lifecycle
+  - node_modules
 before_install:
-  - openssl aes-256-cbc -K $encrypted_43fe3767f1a1_key -iv $encrypted_43fe3767f1a1_iv -in ./.travis/id_rsa.enc -out ~/.ssh/id_rsa -d
-  - chmod 600 ~/.ssh/id_rsa
-  - eval $(ssh-agent)
-  - ssh-add ~/.ssh/id_rsa
-  - cp .travis/ssh_config ~/.ssh/config
-  - npm install -g hexo-cli # 安装 hexo
-  - git clone -b mod https://github.com/SunshineABC/next.git themes/next
+- openssl aes-256-cbc -K $encrypted_43fe3767f1a1_key -iv $encrypted_43fe3767f1a1_iv
+  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- git config --global user.name "SunshineABC"
+- git config --global user.email "dealloc@sina.cn"
 install:
-  - npm install # 安装 package.json 中的插件
+- npm install hexo-cli -g
+- npm install hexo-deployer-git --save
+- npm install
+- git clone -b mod https://github.com/SunshineABC/next.git themes/next
 script:
-  - hexo generate
+- hexo clean
+- hexo g
+
 after_success:
-  - git config --global user.name "SunshineABC"
-  - git config --global user.email "dealloc@sina.cn"
-  - sed -i'' "/^ *repo/s~github\.com~${token}@github.com~" _config.yml
-  - hexo deploy
+- hexo deploy

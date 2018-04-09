@@ -28,4 +28,3 @@ branches:
 env:
     global:
           - GH_REF: github.com/SunshineABC/sunshineABC.github.io.git
-          - GH_TOKEN: 9a33052aa0320998d9c9a45f61e466b6ffa0a3eb

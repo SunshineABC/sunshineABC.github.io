@@ -1,7 +1,7 @@
 ---
 title: Markdown的使用
 date: 2017-03-09 20:29:09
-tags:
+tags: [Markdown,技巧]
 ---
 
 # Markdown 语法和 MWeb 写作使用说明

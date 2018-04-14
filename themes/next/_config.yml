@@ -160,8 +160,8 @@ links_title: 友情链接
 links_layout: inline
 #links_layout: inline //block
 links:
-  站酷: http://www.zcool.com.cn
-  花瓣: http://huaban.com
+  # 站酷: http://www.zcool.com.cn
+  # 花瓣: http://huaban.com
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
